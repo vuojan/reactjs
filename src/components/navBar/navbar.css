@@ -1,0 +1,30 @@
+#navegador {
+    background-color: black;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    padding: 0 0;
+  }
+
+#navegador button.navbar-toggler{
+    background-color: white;
+}
+#navegador div a img{
+    height: 120px;
+}
+
+#navegador div.navbar-nav a {
+    font-size: 1rem;
+    color: white;
+    margin: 0 20px;
+    font-weight: 600;
+    transition: 0.5s;
+  }
+
+#navegador div.navbar-nav a:hover {
+    color: red;
+    cursor: pointer;
+}

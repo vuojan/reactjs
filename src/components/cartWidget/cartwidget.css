@@ -1,0 +1,22 @@
+.cart{
+    height: 50px;
+    margin: 0 20px;
+}
+
+.cart:hover{
+    cursor: pointer;
+}
+
+.cartNumber{
+    color: red;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: center;
+    align-self: center;
+    
+}
+
+.flexCart{
+    display: flex;
+    padding: 15px 0;
+}
