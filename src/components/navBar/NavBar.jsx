@@ -14,7 +14,7 @@ return(
   </button>
   <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
     <div className="navbar-nav">
-      <a className="nav-link">INICIO</a> 
+      <a className="nav-link" href="index.html">INICIO</a> 
       <a className="nav-link">MAPAS</a> 
       <a className="nav-link">EXALTADOS</a> 
       <a className="nav-link">CRAFTING</a>

@@ -1,0 +1,31 @@
+.itemCard{
+    background-color: currentColor;
+    width: 250px;
+    height: auto;
+    margin: 40px;
+    text-align: center;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.itemCard:hover{
+    border: crimson solid 3px;
+}
+
+.itemTittle{
+    color: white;
+    margin-bottom: 20px;
+}
+
+.itemPrice{
+    color: crimson;
+    margin-top: 20px;
+}
+
+.itemImg{
+    margin-top: auto;
+}

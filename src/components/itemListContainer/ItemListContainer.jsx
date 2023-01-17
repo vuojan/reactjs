@@ -1,9 +1,25 @@
-import "./itemlistcontainer.css";
+import React, {useState,useEffect} from "react";
+import getItems from "../../services/mockAsyncService";
+import ItemList from "../ItemList/ItemList";
 
-function ItemListContainer(props){
+function ItemListContainer(){
+    const [products,setProducts] = useState([]);
 
-return <h1 className="greetingProp">{props.text}</h1>
+    console.log("renderizando");
 
+    useEffect( ()=>{ 
+        getItems().then((respuesta)=> {
+            console.log(respuesta)
+            setProducts(respuesta);
+        });
+    }, [])
+
+    return (
+        <>
+            <ItemList products={products}/>
+        </>  
+    )
 }
+
 
 export default ItemListContainer;

@@ -1,0 +1,56 @@
+.flexCount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.flexItemCount{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.buttonCount{
+    width: 50px;
+    color: red;
+    font-weight: 500;
+    border: none;
+    background-color: lightgrey;
+}
+
+.buttonCount__leftRadius{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.buttonCount__rightRadius{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.count{
+    width: 60px;
+    background-color: white;
+}
+
+.buttonAgregar{
+    width: 170px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.1rem; 
+    font-size: 1rem; 
+    transition-duration: 0.4s; 
+    color: black;
+    background-color: white;
+    border: solid 2px red;
+}
+
+.buttonAgregar:hover{
+    background-color: red;
+    color: white;
+}

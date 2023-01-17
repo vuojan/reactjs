@@ -1,0 +1,47 @@
+.detailCard{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 30px;
+    text-align: center;
+    background-color: currentColor;
+    border-radius: 15px;
+}
+
+.detailTittle{
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.detailFlex{
+    display: flex;
+    justify-content: center;
+}
+
+.detailText{
+    width: 500px;
+    font-size: 1.5rem;
+    margin-left: 40px;
+    text-align: right;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: crimson;
+}
+
+.detailImage{
+    width: 150px;
+}
+
+.detailPrice{
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color:white;
+}
+
+.itemCount--margin{
+    margin-top: 30px;
+}

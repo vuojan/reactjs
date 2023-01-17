@@ -3,12 +3,14 @@ import './App.css';
 
 import NavBar from "./components/navBar/NavBar";
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
     <>
     <NavBar/>
-    <ItemListContainer text="Bienvenidos a la mejor tienda para comprar Currency de Path of Exile"/>
+    <ItemListContainer/>
+    <ItemDetailContainer/>
     </>
   );
 }
