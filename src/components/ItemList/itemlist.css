@@ -1,6 +1,10 @@
+
 .itemsFlex{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: lightgray;
+}
+
+.itemMainDiv{
+    min-height: 100%;
 }
