@@ -1,7 +1,7 @@
 import React from "react";
 import "./itemCount.css";
 
-function ItemCount(){
+function ItemCount(props){
     const[conteo,setConteo] = React.useState(1)
 
     function resta(){
@@ -18,7 +18,7 @@ function ItemCount(){
                 <span className="count">{conteo}</span>
                 <button className="buttonCount buttonCount__rightRadius" disabled={conteo >= 99} onClick={suma}>+</button>
             </div>  
-            <button className="buttonAgregar">Agregar al Carrito</button>
+            <button className="buttonAgregar" onClick={()=> props.addToCart(conteo)}>Agregar al Carrito</button>
         </div>
     )
 }
