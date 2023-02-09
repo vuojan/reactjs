@@ -5,7 +5,7 @@ function Loader(){
     return (
         <>
             <h1 className="tittle">Cargando...</h1>
-            <div class="lds-dual-ring centerColor"></div>
+            <div className="lds-dual-ring centerColor"></div>
         </>
     )
 }     

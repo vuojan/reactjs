@@ -1,7 +1,9 @@
 import React, {useState,useEffect, useContext} from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getISingletem } from "../../services/mockAsyncService";
 import { cartContext } from "../../storage/cartContext";
+import ButtonCard from "../Button/ButtonCard";
+import ItemCount from "../itemCount/ItemCount";
 import ItemDetail from "../itemDetail/ItemDetail";
 import Loader from "../Loader/Loader";
 import "./itemdetailcontainer.css"
@@ -9,13 +11,14 @@ import "./itemdetailcontainer.css"
 function ItemDetailContainer(){
     const [product,setProduct] = useState([]);
     const [isLoading,setIsLoading] = useState (true);
+    const [isInCart,SetIsInCart] = useState(false);
 
     let {itemid} = useParams()
 
     let {addItem, clearCart, removeItem} = useContext(cartContext)
 
     function handleAddToCart(conteo){
-
+        SetIsInCart(true)
         alert(`Agregaste ${conteo} ${product.tittle} al carrito`)
         addItem(product,conteo)
         
@@ -34,6 +37,7 @@ function ItemDetailContainer(){
     }, []);
 
     if(isLoading)
+
     return <Loader/>
 
     return (
@@ -45,10 +49,15 @@ function ItemDetailContainer(){
                         imgurl={product.imgurl}
                         detail={product.detail}
                         price={product.price}
-                        handleAddToCart={handleAddToCart}
                     />
-                <button onClick={clearCart}>Vaciar carro</button>
-                <button onClick={()=> removeItem (product.id)}>Eliminar item</button>
+                    {isInCart ?
+                        
+                        <Link to= "/cart">
+                            <ButtonCard text="Ir al Carrito"/>
+                        </Link>
+                    :
+                        <ItemCount addToCart={handleAddToCart}/>
+                    }
                 </div>
             </div>
         </>  

@@ -1,0 +1,111 @@
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: black;
+    color: white;
+  }
+
+  #customers tbody{
+    background-color: white;
+  }
+
+.tdWidth__tittle{
+    width: 150px;
+}
+
+.tdWidth__img{
+    width: 200px;
+}
+
+.tdWidth{
+    width: 100px;
+}
+
+.thWidth__tittle{
+    width: 150px;
+}
+
+.thWidth__img{
+    width: 200px;
+}
+
+.thWidth{
+    width: 100px;
+}
+
+.mainDivCenter{
+    max-width: 1400px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.tableMargin{
+    margin: 0 auto;
+}
+
+.emptyCart{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.emptyCart--button{
+    padding: 10px !important;
+}
+
+.totalPrice{
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 30px;
+
+}
+
+.totalPrice--color{
+    color: crimson;
+}
+
+.buttonFunctions{
+    width: 170px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1em; 
+    transition-duration: 0.4s; 
+    color: black;
+    background-color: white;
+    border: solid 2px red;
+    margin-right: 20px;
+}
+
+.buttonFunctions:hover{
+    background-color: red;
+    color: white;
+}
+
+.buttonX{
+    background-color: white;
+    border: solid 2px red;
+}
+
+.buttonX:hover{
+    background-color: red;
+    color: white;
+}
+
+.tittleCart{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from "react";
 import { useParams } from "react-router-dom";
-import getItems, { getItemsByCategory } from "../../services/mockAsyncService";
+import { getItemsByCategory } from "../../services/mockAsyncService";
+import getItems from "../../services/mockAsyncService";
 import ItemList from "../ItemList/ItemList";
 import Loader from "../Loader/Loader";
 

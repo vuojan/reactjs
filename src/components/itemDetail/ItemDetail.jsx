@@ -1,7 +1,7 @@
-import ItemCount from "../itemCount/ItemCount";
 import "./itemdetail.css"
 
 function ItemDetail ({tittle, imgurl, detail, price, handleAddToCart}) {
+    
 
     return(
 
@@ -14,7 +14,6 @@ function ItemDetail ({tittle, imgurl, detail, price, handleAddToCart}) {
                 <div>
                     <h3 className="detailText">{detail}</h3>
                     <div className="detailPrice">$ {price}</div>
-                    <ItemCount addToCart={handleAddToCart}/>
                 </div>
             </div>
         </>  

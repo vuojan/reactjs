@@ -5,7 +5,7 @@ export const cartContext = createContext ();
 export function CartContextProvider(props){
 
     let [cart,setCart]= useState([]);
-    const value= {cart, setCart, addItem, getTotalItems,clearCart,removeItem}
+    const value= {cart, setCart, addItem, getTotalItems,clearCart,removeItem,getSubTotalPrice, getTotalPriceInCart}
 
     function addItem(item, conteo) {
         const isInCart = cart.some((itemInCart) => itemInCart.id === item.id)
@@ -43,7 +43,15 @@ export function CartContextProvider(props){
     }
 
     function getTotalPriceInCart(){
-        
+        let total = 0
+        cart.forEach((item) => total += item.price * item.conteo)
+        return total
+
+    }
+
+    function getSubTotalPrice(price,conteo){
+        let subTotal = price * conteo
+        return subTotal
     }
 
 
