@@ -13,10 +13,8 @@ export function CartContextProvider(props){
         if(isInCart){
             let newCart = [...cart]
             let index = cart.findIndex((itemInCart) => itemInCart.id === item.id)    
-            console.log(newCart[index].conteo)
             newCart[index] = {...newCart[index], conteo: newCart[index].conteo + conteo}
             setCart(newCart)
-            console.log(conteo)
         }
         else{
             let newCart = [...cart]

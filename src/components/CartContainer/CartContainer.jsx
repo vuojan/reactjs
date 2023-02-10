@@ -4,12 +4,13 @@ import Swal from "sweetalert2"
 import { createBuyOrder } from "../../services/firebase"
 import { cartContext } from "../../storage/cartContext"
 import ButtonCard from "../Button/ButtonCard"
+import CartForm from "../CartForm/CartForm"
 import "./cartcontainer.css"
 
 function CartContainer(){
     const {cart,removeItem,clearCart,getSubTotalPrice,getTotalPriceInCart} = useContext(cartContext)
 
-    async function handleCheckout(evt){
+    async function handleCheckout(userData){
         const items = cart.map((item) => ({
             id:item.id, 
             title:item.tittle, 
@@ -17,11 +18,7 @@ function CartContainer(){
             conteo: item.conteo
          }))
         const order = {
-            buyer:{
-                name: "Gero",
-                telefono: 123,
-                mail: "sadasdasd",
-            },
+            buyer: userData,
             items: items,
             date: new Date(),
             total: getTotalPriceInCart(),
@@ -89,10 +86,12 @@ function CartContainer(){
             </table>
             <div className="totalPrice">Precio total: <span className="totalPrice--color">{getTotalPriceInCart()}$</span></div>
             <div>
-                <button className="buttonFunctions" onClick={handleCheckout}>Finalizar compra</button>
+                {/* <button className="buttonFunctions" onClick={handleCheckout}>Finalizar compra</button> */}
                 <button className="buttonFunctions" onClick={clearCart}>Vaciar carro</button>
             </div>
+            <CartForm onSubmit={handleCheckout}/>
         </div>
+        
         
     )
 }

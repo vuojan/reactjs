@@ -1,0 +1,49 @@
+#label {
+    font-size: 1.2rem !important;
+}
+
+#formGroupExampleInput{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.formTittle{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.formCard{
+    background-color: white;
+    width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+}
+
+.buttonFunctionsForm{
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1em; 
+    transition-duration: 0.4s; 
+    color: white;
+    background-color: red;
+    border: solid 2px black;
+    margin-right: 20px;
+}
+
+.buttonFunctionsForm:hover{
+    background-color: red;
+    color: black;
+}
+
+.buttonsFlex{
+    display: flex;
+    justify-content: center;
+}
