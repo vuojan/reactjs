@@ -7,14 +7,15 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from './storage/cartContext';
 import CartContainer from './components/CartContainer/CartContainer';
-import { exportData } from './services/firebase';
+import { exportDataWithBatch } from './services/firebase';
+
 
 
 function App() {
+  
   return (
     <>
     <CartContextProvider>
-      <button onClick={exportData}>Export data</button>
       <BrowserRouter>
         <NavBar/>
         <Routes>

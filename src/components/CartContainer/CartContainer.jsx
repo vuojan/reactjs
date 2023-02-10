@@ -1,11 +1,41 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
+import Swal from "sweetalert2"
+import { createBuyOrder } from "../../services/firebase"
 import { cartContext } from "../../storage/cartContext"
 import ButtonCard from "../Button/ButtonCard"
 import "./cartcontainer.css"
 
 function CartContainer(){
     const {cart,removeItem,clearCart,getSubTotalPrice,getTotalPriceInCart} = useContext(cartContext)
+
+    async function handleCheckout(evt){
+        const items = cart.map((item) => ({
+            id:item.id, 
+            title:item.tittle, 
+            price: item.price,
+            conteo: item.conteo
+         }))
+        const order = {
+            buyer:{
+                name: "Gero",
+                telefono: 123,
+                mail: "sadasdasd",
+            },
+            items: items,
+            date: new Date(),
+            total: getTotalPriceInCart(),
+        }  
+        let id = await createBuyOrder(order);
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Compra exitosa',
+            text: `El ID de tu compra es ${id}`,
+            footer: 'Gracias por confiar en nosotros!'
+          })
+        clearCart();
+    }
 
     if(cart.length === 0)
     return (
@@ -48,7 +78,7 @@ function CartContainer(){
                                 {item.conteo}
                             </td>
                             <td className="tdWidth">
-                                {getSubTotalPrice(item.price,item.conteo)}
+                                {getSubTotalPrice(item.price,item.conteo)}$
                             </td> 
                             <td className="tdWidth">
                                 <button className="buttonX" onClick={()=> removeItem (item.id)}>X</button>
@@ -58,8 +88,8 @@ function CartContainer(){
             ))}
             </table>
             <div className="totalPrice">Precio total: <span className="totalPrice--color">{getTotalPriceInCart()}$</span></div>
-            <div className>
-                <button className="buttonFunctions">Finalizar compra</button>
+            <div>
+                <button className="buttonFunctions" onClick={handleCheckout}>Finalizar compra</button>
                 <button className="buttonFunctions" onClick={clearCart}>Vaciar carro</button>
             </div>
         </div>

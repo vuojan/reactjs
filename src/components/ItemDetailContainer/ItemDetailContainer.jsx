@@ -1,12 +1,13 @@
 import React, {useState,useEffect, useContext} from "react";
 import { Link, useParams } from "react-router-dom";
-import { getISingletem } from "../../services/mockAsyncService";
+import { getISingletem } from "../../services/firebase";
 import { cartContext } from "../../storage/cartContext";
 import ButtonCard from "../Button/ButtonCard";
 import ItemCount from "../itemCount/ItemCount";
 import ItemDetail from "../itemDetail/ItemDetail";
 import Loader from "../Loader/Loader";
 import "./itemdetailcontainer.css"
+import Swal from "sweetalert2";
 
 function ItemDetailContainer(){
     const [product,setProduct] = useState([]);
@@ -15,11 +16,26 @@ function ItemDetailContainer(){
 
     let {itemid} = useParams()
 
-    let {addItem, clearCart, removeItem} = useContext(cartContext)
+    let {addItem,cart} = useContext(cartContext)
+
+    const itemInCart= cart.find((item)=> item.id === product.id)
+    let stockUpdated;
+    if(itemInCart)
+    stockUpdated = product.stock - itemInCart.conteo;
+    else
+    stockUpdated=product.stock
+
 
     function handleAddToCart(conteo){
         SetIsInCart(true)
-        alert(`Agregaste ${conteo} ${product.tittle} al carrito`)
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: `Agregaste ${conteo} ${product.tittle} al carrito`,
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+          })
         addItem(product,conteo)
         
     }
@@ -56,7 +72,7 @@ function ItemDetailContainer(){
                             <ButtonCard text="Ir al Carrito"/>
                         </Link>
                     :
-                        <ItemCount addToCart={handleAddToCart}/>
+                        <ItemCount stock={stockUpdated} addToCart={handleAddToCart}/>
                     }
                 </div>
             </div>
